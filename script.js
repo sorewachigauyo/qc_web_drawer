@@ -17,13 +17,27 @@ for (let i = 0; i < sequence.length; i++) {
     }
 }
 circuit.set$(Q.Gate.MEASURE, sequence.length + 1, 1)
-var txt  = circuit.toDiagram();
+document.body.appendChild( circuit.toDom() );
+/* var txt  = circuit.toDiagram();
+console.debug(circuit.toDiagram(true));
 var tCtx = document.getElementById('textCanvas').getContext('2d'); //Hidden canvas
 var lines = txt.split('\n');
-console.debug(lines);
 var x = 30;
 var y = 30;
 var lineheight = 15;
-for (var i = 0; i < lines.length; i++)
-    tCtx.fillText(lines[i], 0, 10 + i * lineheight);
+for (var i = 0; i < lines.length; i++) {
+    var str = "";
+    var line = lines[i];
+    var found = false;
+     if (line) {
+        for (let k = 0; k < line.length; k++) {
+            str += line[k];
+            if (i % 2 == 0 && line[k] == " " && !found) {
+                str += "    ";
+                found = true;
+            }
+        }
+    }
+    tCtx.fillText(str, 0, 10 + i * lineheight);
+} */
 // Text input element
