@@ -4,7 +4,7 @@ let results = res === null ? [] : res.split(",");
 if (results.length == 2) { 
     var data = [
         {
-          x: ["|0>", "1>"],
+          x: ["|0>", "|1>"],
           y: results,
           type: 'bar'
         }
